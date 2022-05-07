@@ -1,5 +1,6 @@
 import 'package:calculadora_bhaskara/methods/bhaskara.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Finished extends StatelessWidget {
   Finished(
@@ -56,43 +57,47 @@ class Finished extends StatelessWidget {
     // ];
 
     return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              textWithseparator(first),
-              textWithseparator(
-                  'Δ = ${valorB.toString()}² - 4.${valorA.toString()}.${valorC.toString()}'),
-              textWithseparator(
-                  'Δ = ${valorB.toString()}² - 4.${aXc.toString()}'),
-              textWithseparator(
-                  'Δ = ${valorB.toString()}² - ${four_aXc.toString()}'),
-              textWithseparator(
-                  'Δ = ${bAoquadrado.toString()} - ${four_aXc.toString()}'),
-              textWithseparator('Δ = ${delta.toString()}'),
-              const SizedBox(height: 50,),
-              textWithseparator('x = -B ± √Δ ÷ 2.a'),
-              textWithseparator('x = -$bNeg ± √$delta ÷ 2.$valorA'),
-              textWithseparator('x = -$bNeg ± $delta ÷ 2.$valorA'),
-              textWithseparator('x = -$bNeg ± $raizDelta ÷ $dXa'),
-              const SizedBox(height: 50,),
-              textWithseparator('XI = -$valorB + $valorA ÷ $dXa'),
-              textWithseparator('XI = $bWithA ÷ $dXa'),
-              textWithseparator('XI = $bWithA_div'),
-              const SizedBox(height:50), 
-              textWithseparator('`XII = - $bNeg - $valorA ÷ $dXa '), 
-              textWithseparator('XII = $bWithoutA ÷ $dXa'), 
-              textWithseparator('XII = $bWithoutA_div'), 
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                textWithseparator(first),
+                textWithseparator(
+                    'Δ = ${valorB.toString()}² - 4.${valorA.toString()}.${valorC.toString()}'),
+                textWithseparator(
+                    'Δ = ${valorB.toString()}² - 4.${aXc.toString()}'),
+                textWithseparator(
+                    'Δ = ${valorB.toString()}² - ${four_aXc.toString()}'),
+                textWithseparator(
+                    'Δ = ${bAoquadrado.toString()} - ${four_aXc.toString()}'),
+                textWithseparator('Δ = ${delta.toString()}'),
+                const SizedBox(
+                  height: 50,
+                ),
+                textWithseparator('x = -B ± √Δ ÷ 2.a'),
+                textWithseparator('x = -$bNeg ± √$delta ÷ 2.$valorA'),
+                textWithseparator('x = -$bNeg ± $delta ÷ 2.$valorA'),
+                textWithseparator('x = -$bNeg ± $raizDelta ÷ $dXa'),
+                const SizedBox(
+                  height: 50,
+                ),
+                textWithseparator('XI = -$valorB + $valorA ÷ $dXa'),
+                textWithseparator('XI = $bWithA ÷ $dXa'),
+                textWithseparator('XI = $bWithA_div'),
+                const SizedBox(height: 50),
+                textWithseparator('`XII = - $bNeg - $valorA ÷ $dXa '),
+                textWithseparator('XII = $bWithoutA ÷ $dXa'),
+                textWithseparator('XII = $bWithoutA_div'),
 
-// res.innerHTML += `XII = -${valorB} - ${valorA} ÷ ${DxA}<br> 
-//     res.innerHTML += `XII = ${BmenosA} ÷ ${DxA}<br>`
-//     res.innerHTML += `XII = ${BmenosA_div}`
-
-
-            ],
+                // res.innerHTML += `XII = -${valorB} - ${valorA} ÷ ${DxA}<br>
+                //     res.innerHTML += `XII = ${BmenosA} ÷ ${DxA}<br>`
+                //     res.innerHTML += `XII = ${BmenosA_div}`
+              ],
+            ),
           ),
         ),
       ),
@@ -101,8 +106,11 @@ class Finished extends StatelessWidget {
 }
 
 Widget textWithseparator(String text) {
-  const textStyle =
-      TextStyle(fontSize: 28, fontWeight: FontWeight.bold, wordSpacing: 2);
+   final textStyle = GoogleFonts.oxygen(
+      fontSize: 28,
+      color: Colors.black87,
+      fontWeight: FontWeight.bold,
+      wordSpacing: 2);
   return Padding(
     padding: const EdgeInsets.only(left: 10.0, right: 10),
     child: Column(
@@ -111,7 +119,7 @@ Widget textWithseparator(String text) {
           text,
           style: textStyle,
         ),
-        SizedBox(
+        const SizedBox(
           width: 200,
           child: Divider(
             height: 10,

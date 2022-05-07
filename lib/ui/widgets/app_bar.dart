@@ -2,6 +2,7 @@ import 'package:calculadora_bhaskara/methods/bhaskara.dart';
 import 'package:calculadora_bhaskara/ui/widgets/calc_finished.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppBarN extends StatelessWidget {
   const AppBarN({Key? key}) : super(key: key);
@@ -17,7 +18,12 @@ class AppBarN extends StatelessWidget {
           child: Scaffold(
             backgroundColor: Color.fromARGB(255, 34, 32, 32),
             appBar: AppBar(
-              title: const Text('Fórmulas de segundo grau'),
+              title: Text(
+                'Fórmulas de segundo grau',
+                style: GoogleFonts.oxygen(
+                  fontSize: 20,
+                ),
+              ),
               centerTitle: true,
               leading: IconButton(
                 icon: const Icon(Icons.menu),
@@ -39,22 +45,18 @@ class AppBarN extends StatelessWidget {
                 tabs: [
                   Tab(
                     icon: Icon(Icons.home),
-                    text: 'Home',
+                    text: 'Calculadora',
                   ),
                   Tab(
                     icon: Icon(Icons.home),
-                    text: 'Calculadora',
+                    text: 'Credits',
                   ),
                 ],
               ),
             ),
             body: TabBarView(
               children: [
-                buildPage(
-                  'Home',
-                  context,
-                  noIscalcPage: true,
-                ),
+                buildPage('Home', context, noIscalcPage: true),
                 buildPage('Fórmula de Bhaskara!', context),
               ],
             ),
@@ -71,28 +73,37 @@ Widget buildPage(tag, BuildContext context, {bool noIscalcPage = false}) {
         padding: const EdgeInsets.only(bottom: 15.0),
         child: Observer(
           builder: (_) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const SizedBox(
-                  height: 50,
-                ),
-                noIscalcPage
-                    ? calcPage(context)
-                    : Container(
-                        width: 350,
-                        height: 400,
-                        decoration: BoxDecoration(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(15)),
-                            color: Colors.amberAccent[100]),
-                        child: const Text(
-                          'Home',
-                          style: TextStyle(color: Colors.white, fontSize: 28),
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  noIscalcPage
+                      ? calcPage(context)
+                      : Container(
+                          width: 350,
+                          height: 400,
+                          decoration: const BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15)),
+                              color: Color.fromARGB(255, 141, 157, 248)),
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 20),
+                            child: Text(
+                              'By Reysmall dev and X_reverse',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.oxygen(
+                                fontSize: 28,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
-              ],
+                ],
+              ),
             );
           },
         ),
@@ -138,7 +149,7 @@ Widget calcPage(BuildContext ctx) {
           SizedBox(
             width: 100,
             child: TextFormField(
-              style: const TextStyle(color: Colors.white, fontSize: 20),
+              style: GoogleFonts.oxygen(fontSize: 20, color: Colors.white),
               controller: aText,
               validator: validar,
               keyboardType: TextInputType.number,
@@ -210,9 +221,9 @@ Widget calcPage(BuildContext ctx) {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text(
+            Text(
               'Digite o valor das incógnitas:',
-              style: TextStyle(fontSize: 30),
+              style: GoogleFonts.oxygen(fontSize: 30, color: Colors.white),
               textAlign: TextAlign.center,
             ),
             Row(
@@ -227,7 +238,11 @@ Widget calcPage(BuildContext ctx) {
                   onPressed: () {
                     validate(formkey);
                   },
-                  child: const Text('Calcular'),
+                  child: Text(
+                    'Calcular',
+                    style:
+                        GoogleFonts.oxygen(fontSize: 20, color: Colors.white),
+                  ),
                 ),
               ],
             ),
