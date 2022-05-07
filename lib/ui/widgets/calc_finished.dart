@@ -82,8 +82,12 @@ class Finished extends StatelessWidget {
               textWithseparator('XI = -$valorB + $valorA ÷ $dXa'),
               textWithseparator('XI = $bWithA ÷ $dXa'),
               textWithseparator('XI = $bWithA_div'),
-              textWithseparator('')
-// res.innerHTML += `XII = -${valorB} - ${valorA} ÷ ${DxA}<br>`
+              const SizedBox(height:50), 
+              textWithseparator('`XII = - $bNeg - $valorA ÷ $dXa '), 
+              textWithseparator('XII = $bWithoutA ÷ $dXa'), 
+              textWithseparator('XII = $bWithoutA_div'), 
+
+// res.innerHTML += `XII = -${valorB} - ${valorA} ÷ ${DxA}<br> 
 //     res.innerHTML += `XII = ${BmenosA} ÷ ${DxA}<br>`
 //     res.innerHTML += `XII = ${BmenosA_div}`
 
