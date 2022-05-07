@@ -6,7 +6,7 @@ description: A Sample Calculator for Bhaskara Expressions.
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'GitHub' # Remove this line if you wish to publish to pub.dev
 homepage: "https://github.com/reysmalldev/calculadora_bhaskara"
-version: 1.0.0+1
+version: 1.0.2
 
 environment:
   sdk: ">=2.16.2 <3.0.0"

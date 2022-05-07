@@ -57,46 +57,56 @@ class Finished extends StatelessWidget {
     // ];
 
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                textWithseparator(first),
-                textWithseparator(
-                    'Δ = ${valorB.toString()}² - 4.${valorA.toString()}.${valorC.toString()}'),
-                textWithseparator(
-                    'Δ = ${valorB.toString()}² - 4.${aXc.toString()}'),
-                textWithseparator(
-                    'Δ = ${valorB.toString()}² - ${four_aXc.toString()}'),
-                textWithseparator(
-                    'Δ = ${bAoquadrado.toString()} - ${four_aXc.toString()}'),
-                textWithseparator('Δ = ${delta.toString()}'),
-                const SizedBox(
-                  height: 50,
-                ),
-                textWithseparator('x = -B ± √Δ ÷ 2.a'),
-                textWithseparator('x = -$bNeg ± √$delta ÷ 2.$valorA'),
-                textWithseparator('x = -$bNeg ± $delta ÷ 2.$valorA'),
-                textWithseparator('x = -$bNeg ± $raizDelta ÷ $dXa'),
-                const SizedBox(
-                  height: 50,
-                ),
-                textWithseparator('XI = -$valorB + $valorA ÷ $dXa'),
-                textWithseparator('XI = $bWithA ÷ $dXa'),
-                textWithseparator('XI = $bWithA_div'),
-                const SizedBox(height: 50),
-                textWithseparator('`XII = - $bNeg - $valorA ÷ $dXa '),
-                textWithseparator('XII = $bWithoutA ÷ $dXa'),
-                textWithseparator('XII = $bWithoutA_div'),
-
-                // res.innerHTML += `XII = -${valorB} - ${valorA} ÷ ${DxA}<br>
-                //     res.innerHTML += `XII = ${BmenosA} ÷ ${DxA}<br>`
-                //     res.innerHTML += `XII = ${BmenosA_div}`
-              ],
+      body: SafeArea(
+        bottom: true,
+        top: true,
+        right: true,
+        left: true,
+        child: SingleChildScrollView(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(height: 50),
+                  textWithseparator(first),
+                  textWithseparator(
+                      'Δ = ${valorB.toString()}² - 4.${valorA.toString()}.${valorC.toString()}'),
+                  textWithseparator(
+                      'Δ = ${valorB.toString()}² - 4.${aXc.toString()}'),
+                  textWithseparator(
+                      'Δ = ${valorB.toString()}² - ${four_aXc.toString()}'),
+                  textWithseparator(
+                      'Δ = ${bAoquadrado.toString()} - ${four_aXc.toString()}'),
+                  textWithseparator('Δ = ${delta.toString()}'),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  double.parse(delta) >= 0
+                      ? Column(
+                          children: [
+                            textWithseparator('x = -B ± √Δ ÷ 2.a'),
+                            textWithseparator('x = $bNeg ± √$delta ÷ 2.$valorA'),
+                            textWithseparator('x = $bNeg ± $delta ÷ 2.$valorA'),
+                            textWithseparator('x = $bNeg ± $raizDelta ÷ $dXa'),
+                            const SizedBox(
+                              height: 50,
+                            ),
+                            textWithseparator('XI = -$valorB + $valorA ÷ $dXa'),
+                            textWithseparator('XI = $bWithA ÷ $dXa'),
+                            textWithseparator('XI = $bWithA_div'),
+                            const SizedBox(height: 50),
+                            textWithseparator('XII =  $bNeg - $valorA ÷ $dXa '),
+                            textWithseparator('XII = $bWithoutA ÷ $dXa'),
+                            textWithseparator('XII = $bWithoutA_div'),
+                          ],
+                        )
+                      : textWithseparator(
+                          'Delta($delta) é negativo, logo essa expressão é incompleta')
+                ],
+              ),
             ),
           ),
         ),
@@ -106,8 +116,8 @@ class Finished extends StatelessWidget {
 }
 
 Widget textWithseparator(String text) {
-   final textStyle = GoogleFonts.oxygen(
-      fontSize: 28,
+  final textStyle = GoogleFonts.oxygen(
+      fontSize: 20,
       color: Colors.black87,
       fontWeight: FontWeight.bold,
       wordSpacing: 2);
@@ -120,7 +130,7 @@ Widget textWithseparator(String text) {
           style: textStyle,
         ),
         const SizedBox(
-          width: 200,
+          width: 300,
           child: Divider(
             height: 10,
           ),
