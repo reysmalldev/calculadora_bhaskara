@@ -57,38 +57,40 @@ class Finished extends StatelessWidget {
 
     return Scaffold(
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              textWithseparator(first),
-              textWithseparator(
-                  'Δ = ${valorB.toString()}² - 4.${valorA.toString()}.${valorC.toString()}'),
-              textWithseparator(
-                  'Δ = ${valorB.toString()}² - 4.${aXc.toString()}'),
-              textWithseparator(
-                  'Δ = ${valorB.toString()}² - ${four_aXc.toString()}'),
-              textWithseparator(
-                  'Δ = ${bAoquadrado.toString()} - ${four_aXc.toString()}'),
-              textWithseparator('Δ = ${delta.toString()}'),
-              const SizedBox(height: 50,),
-              textWithseparator('x = -B ± √Δ ÷ 2.a'),
-              textWithseparator('x = -$bNeg ± √$delta ÷ 2.$valorA'),
-              textWithseparator('x = -$bNeg ± $delta ÷ 2.$valorA'),
-              textWithseparator('x = -$bNeg ± $raizDelta ÷ $dXa'),
-              const SizedBox(height: 50,),
-              textWithseparator('XI = -$valorB + $valorA ÷ $dXa'),
-              textWithseparator('XI = $bWithA ÷ $dXa'),
-              textWithseparator('XI = $bWithA_div'),
-              textWithseparator('')
-// res.innerHTML += `XII = -${valorB} - ${valorA} ÷ ${DxA}<br>`
-//     res.innerHTML += `XII = ${BmenosA} ÷ ${DxA}<br>`
-//     res.innerHTML += `XII = ${BmenosA_div}`
-
-
-            ],
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                textWithseparator(first),
+                textWithseparator(
+                    'Δ = ${valorB.toString()}² - 4.${valorA.toString()}.${valorC.toString()}'),
+                textWithseparator(
+                    'Δ = ${valorB.toString()}² - 4.${aXc.toString()}'),
+                textWithseparator(
+                    'Δ = ${valorB.toString()}² - ${four_aXc.toString()}'),
+                textWithseparator(
+                    'Δ = ${bAoquadrado.toString()} - ${four_aXc.toString()}'),
+                textWithseparator('Δ = ${delta.toString()}'),
+                const SizedBox(height: 50,),
+                textWithseparator('x = -B ± √Δ ÷ 2.a'),
+                textWithseparator('x = -$bNeg ± √$delta ÷ 2.$valorA'),
+                textWithseparator('x = -$bNeg ± $delta ÷ 2.$valorA'),
+                textWithseparator('x = -$bNeg ± $raizDelta ÷ $dXa'),
+                const SizedBox(height: 50,),
+                textWithseparator('XI = -$valorB + $valorA ÷ $dXa'),
+                textWithseparator('XI = $bWithA ÷ $dXa'),
+                textWithseparator('XI = $bWithA_div'),
+                textWithseparator('')
+        // res.innerHTML += `XII = -${valorB} - ${valorA} ÷ ${DxA}<br>`
+        //     res.innerHTML += `XII = ${BmenosA} ÷ ${DxA}<br>`
+        //     res.innerHTML += `XII = ${BmenosA_div}`
+        
+        
+              ],
+            ),
           ),
         ),
       ),

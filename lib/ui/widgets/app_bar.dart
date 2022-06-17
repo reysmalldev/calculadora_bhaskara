@@ -85,7 +85,7 @@ Widget buildPage(tag, BuildContext context, {bool noIscalcPage = false}) {
                         height: 400,
                         decoration: BoxDecoration(
                             borderRadius:
-                                const BorderRadius.all(Radius.circular(15)),
+                                const BorderRadius.all(Radius.circular(15),),
                             color: Colors.amberAccent[100]),
                         child: const Text(
                           'Home',
